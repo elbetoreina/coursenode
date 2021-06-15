@@ -8,6 +8,7 @@ const app = express()
 const port = process.env.PORT
 
 
+app.use(allowCrossDomain)
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
