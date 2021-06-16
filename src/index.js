@@ -1,14 +1,16 @@
 const express = require('express')
+const cors = require('cors')
 require('./db/mongoose')
 
 const userRouter = require('./routes/user')
 const taskRouter = require('./routes/task')
 
 const app = express()
+app.use(cors())
 const port = process.env.PORT
 
 
-app.use(allowCrossDomain)
+
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
