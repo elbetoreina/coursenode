@@ -106,6 +106,18 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
 }
 
+userSchema.statics.findByEmail = async (email) => {
+
+    const user = await User.findOne({ email })
+
+    if (!user) {
+        throw new Error('Unable to login')
+    }
+
+    return user
+
+}
+
 userSchema.pre('save', async function (next) {
     const user = this
 
