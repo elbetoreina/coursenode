@@ -42,6 +42,18 @@ router.post('/users/login/google', async (req, res) => {
     }
 })
 
+router.post('/users/login/facebook', async (req, res) => {
+    try {
+        const user = await User.findByEmail(req.body.email)
+        const token = await user.generateAuthToken()
+        res.send({ user, token })
+    } catch (exc) {
+        const user = new User(req.body)
+        const token = await user.generateAuthToken()
+        res.send({ user, token })
+    }
+})
+
 router.post('/users/logout', auth, async (req, res) => {
 
     try {

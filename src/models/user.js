@@ -32,6 +32,14 @@ const userSchema = new mongoose.Schema({
 
         }
     },
+    facebookId: {
+        type: Number,
+        default: 0
+    },
+    googleId: {
+        type: Number,
+        default: 0
+    },
     password: {
         type: String,
         required: true,
