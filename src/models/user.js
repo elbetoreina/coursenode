@@ -22,15 +22,9 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    age: {
-        type: Number,
-        default: 0,
-        validate(value) {
-            if (value < 0) {
-                throw new Error('Age must be a positive number')
-            }
-
-        }
+    dob: {
+        type: Date,
+        default: Date.parse("January 1, 1900")
     },
     facebookId: {
         type: Number,
