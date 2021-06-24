@@ -6,10 +6,8 @@ const userRouter = require('./routes/user')
 const taskRouter = require('./routes/task')
 
 const corsOptions = {
-    origin: "*", methods:
-        "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS", allowedHeaders:
-        "Access-Control-Allow-Headers,Access-Control-Allow-Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Origin,Cache-Control,Content-Type,X-Token,X-Refresh-Token", credentials: true, preflightContinue: false,
-    optionsSuccessStatus: 204
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS"
 };
 
 const app = express()
