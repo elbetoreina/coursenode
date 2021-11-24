@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-require('./db/mongoose')
+const connectDb = require('./db/mongoose')
 
 const userRouter = require('./routes/user')
 const taskRouter = require('./routes/task')
@@ -11,6 +11,7 @@ const corsOptions = {
 };
 
 const app = express()
+connectDb();
 app.use(cors(corsOptions))
 const port = process.env.PORT
 
@@ -26,5 +27,6 @@ app.listen(port, () => {
 
 const Task = require('./models/task')
 const User = require('./models/user')
+const connectDB = require('./db/mongoose')
 
 
